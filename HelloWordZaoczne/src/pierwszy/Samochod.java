@@ -53,4 +53,47 @@ public class Samochod implements Produkt {
 		this.opis = opis;
 	}
 
+
+
+	@Override
+	public String toString() {
+		return String.format("%s; cena:%s", opis, cena);
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(cena);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((opis == null) ? 0 : opis.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Samochod other = (Samochod) obj;
+		if (Double.doubleToLongBits(cena) != Double
+				.doubleToLongBits(other.cena))
+			return false;
+		if (opis == null) {
+			if (other.opis != null)
+				return false;
+		} else if (!opis.equals(other.opis))
+			return false;
+		return true;
+	}
+
+	
 }
