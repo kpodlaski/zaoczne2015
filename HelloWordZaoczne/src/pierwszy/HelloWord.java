@@ -1,5 +1,9 @@
 package pierwszy;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class HelloWord {
 
 	public int wartosc;
@@ -42,8 +46,37 @@ public class HelloWord {
 		
 		System.out.println(hw);
 		
-		SamochodCiezarowy sc = new SamochodCiezarowy();
+		SamochodCiezarowy sc = new SamochodCiezarowy(175258.99);
 		System.out.println(sc.opis());
+		
+		Produkt[] produkty = new Produkt[5];
+		produkty[0] = new Samochod(28585,"Micra");
+		produkty[1] = new Samochod(12300,"Tata");
+		produkty[2] = sc;
+		produkty[3] = new Samochod(582.33,"Fiat 126P");
+		produkty[4] = new Samochod(128585,"BMW X6");
+		
+		System.out.println("==========================");
+		for(Produkt p : produkty){
+			System.out.println(p.getCena());
+		}
+		
+		Arrays.sort(produkty);
+		
+		System.out.println("==========================");
+		for(Produkt p : produkty){
+			System.out.println(p.getCena());
+		}
+		
+		Arrays.sort(produkty, new ProduktComparator());
+		
+		System.out.println("==========================");
+		for(Produkt p : produkty){
+			System.out.println(p.getCena()+ " "+p.opis());
+		}
+		
+		List<Produkt> lista = Arrays.asList(produkty) ;
+		lista = new ArrayList<Produkt>();
 	}
 
 	@Override

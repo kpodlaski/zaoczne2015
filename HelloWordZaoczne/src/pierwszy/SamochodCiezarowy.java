@@ -1,6 +1,6 @@
 package pierwszy;import java.io.Serializable;
 
-public class SamochodCiezarowy extends Samochod implements Serializable, Comparable<SamochodCiezarowy>{
+public class SamochodCiezarowy extends Samochod implements Serializable {
 
 	/**
 	 * 
@@ -13,15 +13,14 @@ public class SamochodCiezarowy extends Samochod implements Serializable, Compara
 	
 
 	@Override
-	public int compareTo(SamochodCiezarowy o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public String opis() {
 		// TODO Auto-generated method stub
 		return super.opis()+ " ale cie¿arowy";
+	}
+
+	public SamochodCiezarowy(double cena) {
+		super(cena);
+		// TODO Auto-generated constructor stub
 	}
 
 }
