@@ -62,6 +62,10 @@ public class Kontenery {
 			System.out.println(p+" => "+mapa.get(p));
 		}
 		
+		
+		
+		
+		
 	}
 
 }

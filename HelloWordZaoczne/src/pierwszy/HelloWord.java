@@ -3,6 +3,7 @@ package pierwszy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class HelloWord {
 
@@ -77,6 +78,33 @@ public class HelloWord {
 		
 		List<Produkt> lista = Arrays.asList(produkty) ;
 		lista = new ArrayList<Produkt>();
+		Object o = null;
+		Random r = new Random();
+		for (int s=0; s<10; s++ ){
+		try{
+			int i = r.nextInt();
+			switch(i%5){
+			case 0 : o.getClass();break;
+			case 1 : String a =tab[13];
+			case 2 : throw new Exception("Wyj¹tek moj");
+			default : System.out.println("Wykona³em operacje");
+			}
+			
+		}
+		catch(NullPointerException ex){
+			System.out.println("Wyj¹tek "+ex.getMessage());
+		}
+		catch(ArrayIndexOutOfBoundsException ex){
+			System.out.println("Wyj¹tek tablicowy"+ex.getMessage());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		finally{
+			System.out.println("Finally ");
+		}
+		}
 	}
 
 	@Override
