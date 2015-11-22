@@ -1,0 +1,59 @@
+[1]	package strumienie;
+[2]	
+[3]	import java.io.BufferedReader;
+[4]	import java.io.File;
+[5]	import java.io.FileInputStream;
+[6]	import java.io.FileReader;
+[7]	import java.io.FileWriter;
+[8]	import java.io.IOException;
+[9]	import java.io.InputStream;
+[10]	import java.net.MalformedURLException;
+[11]	import java.net.URL;
+[12]	
+[13]	public class CzytajZSieci {
+[14]	
+[15]		public static void main(String[] args) {
+[16]			// TODO Auto-generated method stub
+[17]			try{
+[18]				URL url = new URL("http://www.onet.pl/");
+[19]				//url = new URL("file:///C:\\Users\\Krzysztof\\git\\Zaoczne2015\\HelloWordZaoczne\\src\\strumienie\\CzytajZSieci.java");
+[20]				InputStream is = url.openStream();
+[21]				int c;
+[22]				StringBuilder sb= new StringBuilder();
+[23]				while( (c=is.read())!=-1  ){
+[24]					sb.append((char) c);
+[25]					//Thread.sleep(10);
+[26]				}
+[27]				//System.out.flush();
+[28]				System.out.println(sb.toString());
+[29]				System.out.println("KONIEC");
+[30]				is.close();
+[31]				
+[32]				File f = new File("C:\\Users\\Krzysztof\\git\\Zaoczne2015\\HelloWordZaoczne\\src\\strumienie\\CzytajZSieci.java");
+[33]				//is = new FileInputStream(f);
+[34]				FileReader freader = new FileReader(f);
+[35]				BufferedReader br = new BufferedReader(freader);
+[36]				FileWriter fwriter = new FileWriter("plik.txt");
+[37]				c=1;
+[38]				String line;
+[39]				while(br.ready()){
+[40]					System.out.print("["+ (c) +"]\t");
+[41]					line = br.readLine();
+[42]					System.out.println(line);
+[43]					
+[44]					fwriter.write("["+ (c++) +"]\t");
+[45]					fwriter.write(line);
+[46]					fwriter.write(System.lineSeparator());	//"\n" "\r\n"
+[47]				}
+[48]				fwriter.close();
+[49]				br.close();
+[50]			}
+[51]			catch(MalformedURLException e){
+[52]				e.printStackTrace();
+[53]			} catch (IOException e) {
+[54]				// TODO Auto-generated catch block
+[55]				e.printStackTrace();
+[56]			} 
+[57]		}
+[58]	
+[59]	}
