@@ -62,7 +62,7 @@ public class ConnectDB {
 				try{
 				o = Osoba.fromResultSet(rs);
 				}catch (Exception e){
-					
+					e.printStackTrace();
 				}
 				System.out.print(o.getImie());
 				System.out.print(" ");

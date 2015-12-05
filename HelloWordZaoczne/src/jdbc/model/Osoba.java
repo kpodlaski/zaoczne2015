@@ -14,7 +14,7 @@ public class Osoba {
 		Osoba o = null;
 		try{
 			Stanowisko stanowisko = Stanowisko.fromResultSet(rs);
-			int id = rs.getInt("identity");
+			int id = rs.getInt("id");
 			String imie = rs.getString("imie");
 			String nazwisko = rs.getString("nazwisko");
 			String fotka = rs.getString("fotka");
