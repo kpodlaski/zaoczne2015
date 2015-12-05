@@ -1,10 +1,11 @@
 package jdbc.model;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Stanowisko {
 	public int id;
-	public String Nazwa;
+	public String nazwa;
 	public int getId() {
 		return id;
 	}
@@ -12,13 +13,23 @@ public class Stanowisko {
 		this.id = id;
 	}
 	public String getNazwa() {
-		return Nazwa;
+		return nazwa;
 	}
 	public void setNazwa(String nazwa) {
-		Nazwa = nazwa;
+		nazwa = nazwa;
 	}
 	
-	public Stanowisko(ResultSet rs){
+	public static Stanowisko fromResultSet(ResultSet rs) throws SQLException{
+		int id = rs.getInt("stanowisko");
+		String nazwa = rs.getString("nazwa");
+		return new Stanowisko(id, nazwa);
 		
 	}
+	public Stanowisko(int id, String nazwa) {
+		super();
+		this.id = id;
+		this.nazwa = nazwa;
+	}
+	
+	
 }
