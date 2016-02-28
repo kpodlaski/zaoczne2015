@@ -1,5 +1,6 @@
 package jdbc;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -71,6 +72,7 @@ public class ConnectDB {
 				System.out.println(o.getStanowisko().getNazwa());
 				System.out.println(o.getId());
 			}
+			//CallableStatement
 			
 			con.close();
 			
